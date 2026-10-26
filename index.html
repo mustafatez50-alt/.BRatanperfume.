@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRATAN Perfume | TK Quality Extrait De Parfum</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#0a0a0a',
+                        brandRed: '#dc2626',
+                        brandGold: '#d4af37'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0a0a0a; color: #f3f4f6; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-brandDark min-h-screen flex flex-col select-none pb-20">
+
+    <!-- ÜST HEADER VE LOGO -->
+    <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- LOGO (Instagram Profilindeki Orijinal Tasarım) -->
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="switchTab('home')">
+                <div class="w-9 h-9 rounded-full bg-black border border-neutral-700 flex flex-col items-center justify-center p-1 shadow-md">
+                    <!-- Üçgen Simge -->
+                    <div class="flex space-x-0.5 mb-0.5">
+                        <div class="w-1.5 h-1.5 bg-white rotate-45"></div>
+                        <div class="w-1.5 h-1.5 bg-brandRed rotate-45"></div>
+                    </div>
+                    <!-- Ters Ya Yazısı -->
+                    <span class="text-[9px] font-black tracking-tighter text-white">BЯ</span>
+                </div>
+                <div>
+                    <h1 class="text-base font-black tracking-widest text-white leading-none">B<span class="text-brandRed">Я</span>ATAN</h1>
+                    <p class="text-[9px] tracking-widest text-brandGold uppercase font-semibold">TK Quality</p>
+                </div>
+            </div>
+
+            <!-- SAĞ ÜST İKONLAR (Arama & Sepet & Instagram) -->
+            <div class="flex items-center space-x-3 text-neutral-300">
+                <a href="https://www.instagram.com/bratanperfume?xtok=emF0b2U1MXpuaHFt" target="_blank" class="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-pink-500 hover:bg-neutral-800 transition" title="Instagram Sayfamız">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <button onclick="openCart()" class="relative w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center hover:bg-neutral-800 transition">
+                    <i class="fa-solid fa-bag-shopping text-sm text-neutral-200"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-brandRed text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- LCW TARZI ÜST KATEGORİ MENÜSÜ -->
+        <div class="bg-neutral-950 border-t border-neutral-900 overflow-x-auto hide-scrollbar">
+            <div class="flex space-x-6 px-4 py-2.5 whitespace-nowrap text-xs font-semibold uppercase tracking-wider">
+                <button onclick="switchTab('home')" id="nav-home" class="text-brandRed pb-1 border-b-2 border-brandRed transition">Anasayfa</button>
+                <button onclick="switchTab('erkek')" id="nav-erkek" class="text-neutral-400 hover:text-white pb-1 transition">Erkek</button>
+                <button onclick="switchTab('kadin')" id="nav-kadin" class="text-neutral-400 hover:text-white pb-1 transition">Kadın</button>
+                <button onclick="switchTab('ozel')" id="nav-ozel" class="text-neutral-400 hover:text-white pb-1 transition">Özel Üretim</button>
+                <button onclick="switchTab('muhur')" id="nav-muhur" class="text-neutral-400 hover:text-white pb-1 transition">QR Mühür</button>
+                <button onclick="switchTab('davet')" id="nav-davet" class="text-brandGold hover:text-yellow-400 pb-1 transition">Davet Et & Kazan</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ANA İÇERİK ALANI -->
+    <main class="max-w-md mx-auto w-full px-4 py-4 flex-grow">
+
+        <!-- 1. ANASAYFA (LCW Tarzı Görsel Grid Yönlendirmeleri) -->
+        <div id="tab-home" class="space-y-4">
+            <!-- Duyuru Banner -->
+            <div class="bg-gradient-to-r from-neutral-900 via-neutral-950 to-neutral-900 border border-neutral-800 rounded-2xl p-4 text-center shadow-lg">
+                <span class="bg-brandRed/20 text-brandRed text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-brandRed/30">Extrait De Parfum</span>
+                <h2 class="text-lg font-bold text-white mt-2">İmza Kokunuzu Keşfedin</h2>
+                <p class="text-xs text-neutral-400 mt-1">%30 yoğun esans oranı ve 24+ saat kalıcılık garantisi.</p>
+            </div>
+
+            <!-- 4'lü Grid Görsel Yönlendirme Kartları (LCW Tarzı) -->
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Erkek Kartı -->
+                <div onclick="switchTab('erkek')" class="relative h-44 rounded-xl overflow-hidden shadow-lg border border-neutral-800 cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" alt="Erkek Kokuları">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-3">
+                        <span class="text-[10px] text-brandRed font-bold uppercase tracking-widest">Maskülen Serisi</span>
+                        <h3 class="text-sm font-bold text-white">ERKEK</h3>
+                        <p class="text-[10px] text-neutral-300">Odunsu ve Baharatlı Notalar</p>
+                    </div>
+                </div>
+
+                <!-- Kadın Kartı -->
+                <div onclick="switchTab('kadin')" class="relative h-44 rounded-xl overflow-hidden shadow-lg border border-neutral-800 cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" alt="Kadın Kokuları">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-3">
+                        <span class="text-[10px] text-pink-400 font-bold uppercase tracking-widest">Zarif Seri</span>
+                        <h3 class="text-sm font-bold text-white">KADIN</h3>
+                        <p class="text-[10px] text-neutral-300">Çiçeksi ve Amber Esintisi</p>
+                    </div>
+                </div>
+
+                <!-- Özel Üretim Kartı -->
+                <div onclick="switchTab('ozel')" class="relative h-44 rounded-xl overflow-hidden shadow-lg border border-neutral-800 cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" alt="Özel Üretim">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-3">
+                        <span class="text-[10px] text-brandGold font-bold uppercase tracking-widest">Kişiselleştirilmiş</span>
+                        <h3 class="text-sm font-bold text-white">ÖZEL ÜRETİM</h3>
+                        <p class="text-[10px] text-neutral-300">Bespoke Lüks Tasarım</p>
+                    </div>
+                </div>
+
+                <!-- QR Mühür Kartı -->
+                <div onclick="switchTab('muhur')" class="relative h-44 rounded-xl overflow-hidden shadow-lg border border-neutral-800 cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" alt="Güvenlik Mührü">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-3">
+                        <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">Orijinallik</span>
+                        <h3 class="text-sm font-bold text-white">QR MÜHÜR</h3>
+                        <p class="text-[10px] text-neutral-300">Kapak Güvenlik Bandı</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Hızlı Bağlantı Kartı -->
+            <a href="https://www.instagram.com/bratanperfume?xtok=emF0b2U1MXpuaHFt" target="_blank" class="block bg-gradient-to-r from-purple-900/40 via-neutral-900 to-pink-900/40 border border-neutral-800 rounded-xl p-4 text-center hover:border-pink-500/50 transition">
+                <i class="fa-brands fa-instagram text-2xl text-pink-500 mb-1"></i>
+                <h4 class="text-xs font-bold text-white">Instagram'da Bizi Takip Edin</h4>
+                <p class="text-[10px] text-neutral-400 mt-0.5">@bratanperfume sayfasına gitmek için tıkla</p>
+            </a>
+        </div>
+
+        <!-- 2. ERKEK KATEGORİSİ -->
+        <div id="tab-erkek" class="hidden space-y-4">
+            <div class="border-b border-neutral-800 pb-2 flex justify-between items-center">
+                <h2 class="text-base font-bold text-white uppercase tracking-wider">Erkek Koleksiyonu</h2>
+                <span class="text-xs text-neutral-400">3 Ürün</span>
+            </div>
+            <div class="grid grid-cols-1 gap-3">
+                <!-- Ürün 1 -->
+                <div class="bg-neutral-900/80 border border-neutral-800 rounded-xl p-3 flex space-x-3 items-center">
+                    <div class="w-20 h-20 bg-neutral-950 rounded-lg overflow-hidden flex-shrink-0 border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=300" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-grow">
+                        <span class="text-[10px] text-brandRed font-bold uppercase">Extrait De Parfum</span>
+                        <h3 class="text-sm font-bold text-white">Black Amber Men</h3>
+                        <p class="text-xs text-neutral-400 mt-0.5">1.000 TL</p>
+                        <div class="flex space-x-2 mt-2">
+                            <button onclick="openProductDetail('Black Amber Men', '1.000 TL', 'Üst: Bergamber, Karabiber\nKalp: Deri, Tütün\nDip: Amber, Paçuli', 'https://images.unsplash.com/photo-1523293182086-7651a899d37f')" class="bg-neutral-800 hover:bg-neutral-700 text-white text-[10px] font-semibold px-2.5 py-1 rounded transition">İncele</button>
+                            <button onclick="orderWhatsApp('Black Amber Men', '1.000 TL')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-semibold px-2.5 py-1 rounded transition flex items-center space-x-1"><i class="fa-brands fa-whatsapp"></i><span>Sipariş</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ürün 2 -->
+                <div class="bg-neutral-900/80 border border-neutral-800 rounded-xl p-3 flex space-x-3 items-center">
+                    <div class="w-20 h-20 bg-neutral-950 rounded-lg overflow-hidden flex-shrink-0 border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=300" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-grow">
+                        <span class="text-[10px] text-brandRed font-bold uppercase">Extrait De Parfum</span>
+                        <h3 class="text-sm font-bold text-white">Royal Wood Intense</h3>
+                        <p class="text-xs text-neutral-400 mt-0.5">1.000 TL</p>
+                        <div class="flex space-x-2 mt-2">
+                            <button onclick="openProductDetail('Royal Wood Intense', '1.000 TL', 'Üst: Sedir Ağacı, Kakule\nKalp: Vetiver, İris\nDip: Misk, Odunsal Notalar', 'https://images.unsplash.com/photo-1594035910387-fea47794261f')" class="bg-neutral-800 hover:bg-neutral-700 text-white text-[10px] font-semibold px-2.5 py-1 rounded transition">İncele</button>
+                            <button onclick="orderWhatsApp('Royal Wood Intense', '1.000 TL')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-semibold px-2.5 py-1 rounded transition flex items-center space-x-1"><i class="fa-brands fa-whatsapp"></i><span>Sipariş</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. KADIN KATEGORİSİ -->
+        <div id="tab-kadin" class="hidden space-y-4">
+            <div class="border-b border-neutral-800 pb-2 flex justify-between items-center">
+                <h2 class="text-base font-bold text-white uppercase tracking-wider">Kadın Koleksiyonu</h2>
+                <span class="text-xs text-neutral-400">2 Ürün</span>
+            </div>
+            <div class="grid grid-cols-1 gap-3">
+                <!-- Ürün 1 -->
+                <div class="bg-neutral-900/80 border border-neutral-800 rounded-xl p-3 flex space-x-3 items-center">
+                    <div class="w-20 h-20 bg-neutral-950 rounded-lg overflow-hidden flex-shrink-0 border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=300" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-grow">
+                        <span class="text-[10px] text-pink-400 font-bold uppercase">Extrait De Parfum</span>
+                        <h3 class="text-sm font-bold text-white">Velvet Rose Bloom</h3>
+                        <p class="text-xs text-neutral-400 mt-0.5">1.000 TL</p>
+                        <div class="flex space-x-2 mt-2">
+                            <button onclick="openProductDetail('Velvet Rose Bloom', '1.000 TL', 'Üst: Gül Yaprakları, Liçi\nKalp: Şakayık, Vadi Zambağı\nDip: Beyaz Misk, Kaşmir', 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539')" class="bg-neutral-800 hover:bg-neutral-700 text-white text-[10px] font-semibold px-2.5 py-1 rounded transition">İncele</button>
+                            <button onclick="orderWhatsApp('Velvet Rose Bloom', '1.000 TL')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-semibold px-2.5 py-1 rounded transition flex items-center space-x-1"><i class="fa-brands fa-whatsapp"></i><span>Sipariş</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. ÖZEL ÜRETİM (Bespoke) -->
+        <div id="tab-ozel" class="hidden space-y-4">
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-4">
+                <span class="text-[10px] text-brandGold font-bold uppercase tracking-wider">Kişiye Özel Tasarım</span>
+                <h2 class="text-base font-bold text-white mt-1">Bespoke / Özel Üretim</h2>
+                <p class="text-xs text-neutral-400 mt-1">İstediğin koku karakterini ve kutu üstü yazısını belirle, sana özel hazırlayalım.</p>
+                
+                <div class="mt-4 space-y-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-neutral-300 mb-1">Kutu Üzerine Yazılacak İsim / Not:</label>
+                        <input type="text" id="custom-name" placeholder="Örn: Özel Seri - Ahmet B." class="w-full bg-black border border-neutral-800 rounded-lg px-3 py-2 text-xs text-white focus:border-brandRed outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-neutral-300 mb-1">Koku Tercihi:</label>
+                        <select id="custom-scent" class="w-full bg-black border border-neutral-800 rounded-lg px-3 py-2 text-xs text-white focus:border-brandRed outline-none">
+                            <option>Odunsu & Baharatlı (Yoğun Maskülen)</option>
+                            <option>Çiçeksi & Tatlı (Zarif Kadınsı)</option>
+                            <option>Amber & Vanilya (Unisex Çekici)</option>
+                        </select>
+                    </div>
+                    <button onclick="sendBespokeOrder()" class="w-full bg-brandRed hover:bg-red-700 text-white text-xs font-bold py-2.5 rounded-lg transition shadow-lg">WhatsApp ile Özel Sipariş Oluştur</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. QR MÜHÜR DOĞRULAMA -->
+        <div id="tab-muhur" class="hidden space-y-4">
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-center">
+                <div class="w-16 h-16 bg-black border border-neutral-700 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-qrcode text-2xl text-brandRed"></i>
+                </div>
+                <h2 class="text-base font-bold text-white">Güvenlik Mührü & QR Sorgulama</h2>
+                <p class="text-xs text-neutral-400 mt-1">Kutunun kapağındaki mühürlü bandı okutarak orijinal ürününüzü doğrulayın ve sonraki siparişinizde %15 indirim kazanın.</p>
+                <div class="mt-4 bg-black/60 border border-neutral-800 p-3 rounded-lg text-left">
+                    <p class="text-xs text-emerald-400 font-semibold flex items-center space-x-1"><i class="fa-solid fa-circle-check"></i><span>QR Kod Durumu: Orijinal TK Quality Ürünü</span></p>
+                    <p class="text-[10px] text-neutral-400 mt-1">İlk açılış güvenlik bandı başarıyla doğrulandı.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. DAVET ET & KAZAN -->
+        <div id="tab-davet" class="hidden space-y-4">
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-center">
+                <span class="text-[10px] text-brandGold font-bold uppercase tracking-wider">Sadakat Programı</span>
+                <h2 class="text-base font-bold text-white mt-1">Davet Et & Kazan</h2>
+                <p class="text-xs text-neutral-400 mt-1">Arkadaşına gönderdiğin özel bağlantıyla 5 sipariş tamamla, 1 şişe Extrait De Parfum hediyeni kazan!</p>
+                <button onclick="shareReferral()" class="mt-4 w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2.5 rounded-lg transition flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>WhatsApp ile Arkadaşına Gönder</span>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ÜRÜN DETAY MODALI -->
+    <div id="product-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-neutral-900 border border-neutral-800 w-full max-w-sm rounded-2xl p-4 relative">
+            <button onclick="closeProductDetail()" class="absolute top-3 right-3 text-neutral-400 hover:text-white text-sm"><i class="fa-solid fa-xmark"></i></button>
+            <div class="w-full h-40 bg-neutral-950 rounded-xl overflow-hidden mb-3 border border-neutral-800">
+                <img id="modal-img" src="" class="w-full h-full object-cover">
+            </div>
+            <h3 id="modal-title" class="text-base font-bold text-white">Ürün Adı</h3>
+            <p id="modal-price" class="text-xs text-brandRed font-semibold mt-0.5">1.000 TL</p>
+            <div class="mt-3 bg-black/50 p-2.5 rounded-lg border border-neutral-800">
+                <span class="text-[10px] text-neutral-400 uppercase font-semibold">Koku Piramidi:</span>
+                <p id="modal-notes" class="text-xs text-neutral-200 mt-1 whitespace-pre-line"></p>
+            </div>
+            <button id="modal-order-btn" class="w-full mt-4 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2.5 rounded-lg transition flex items-center justify-center space-x-2">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp ile Sipariş Ver</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ALT SABİT MOBİL NAVİGASYON (LCW / App Tarzı) -->
+    <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-black/95 border-t border-neutral-800 py-2.5 px-6 flex justify-between items-center z-40 text-neutral-400 text-xs">
+        <button onclick="switchTab('home')" class="flex flex-col items-center hover:text-white transition">
+            <i class="fa-solid fa-house text-sm text-brandRed"></i>
+            <span class="text-[9px] mt-0.5">Anasayfa</span>
+        </button>
+        <button onclick="switchTab('erkek')" class="flex flex-col items-center hover:text-white transition">
+            <i class="fa-solid fa-mars text-sm"></i>
+            <span class="text-[9px] mt-0.5">Erkek</span>
+        </button>
+        <button onclick="switchTab('kadin')" class="flex flex-col items-center hover:text-white transition">
+            <i class="fa-solid fa-venus text-sm"></i>
+            <span class="text-[9px] mt-0.5">Kadın</span>
+        </button>
+        <button onclick="switchTab('ozel')" class="flex flex-col items-center hover:text-white transition">
+            <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+            <span class="text-[9px] mt-0.5">Özel Üretim</span>
+        </button>
+        <a href="https://www.instagram.com/bratanperfume?xtok=emF0b2U1MXpuaHFt" target="_blank" class="flex flex-col items-center text-pink-500 hover:text-pink-400 transition">
+            <i class="fa-brands fa-instagram text-sm"></i>
+            <span class="text-[9px] mt-0.5">Instagram</span>
+        </a>
+    </nav>
+
+    <!-- JAVASCRIPT FONKSİYONLARI -->
+    <script>
+        const phone = "05551637150";
+
+        function switchTab(tabId) {
+            const tabs = ['home', 'erkek', 'kadin', 'ozel', 'muhur', 'davet'];
+            tabs.forEach(t => {
+                document.getElementById('tab-' + t).classList.add('hidden');
+                const navBtn = document.getElementById('nav-' + t);
+                if(navBtn) {
+                    navBtn.classList.remove('text-brandRed', 'border-b-2', 'border-brandRed');
+                    navBtn.classList.add('text-neutral-400');
+                }
+            });
+
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            const activeNav = document.getElementById('nav-' + tabId);
+            if(activeNav) {
+                activeNav.classList.remove('text-neutral-400');
+                activeNav.classList.add('text-brandRed', 'border-b-2', 'border-brandRed');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function orderWhatsApp(productName, price) {
+            const msg = encodeURIComponent(`Merhaba, ${productName} (${price}) parfümünü sipariş vermek istiyorum.`);
+            window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+        }
+
+        function sendBespokeOrder() {
+            const name = document.getElementById('custom-name').value || 'Belirtilmedi';
+            const scent = document.getElementById('custom-scent').value;
+            const msg = encodeURIComponent(`Merhaba, Özel Üretim (Bespoke) parfüm sipariş etmek istiyorum.\nKutudaki İsim: ${name}\nKoku Tercihi: ${scent}`);
+            window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+        }
+
+        function shareReferral() {
+            const msg = encodeURIComponent("BRatan Perfume harika kokular üretiyor! Bu bağlantıdan ilk siparişini vererek özel indirimden yararlanabilirsin.");
+            window.open(`https://wa.me/?text=${msg}`, '_blank');
+        }
+
+        function openProductDetail(title, price, notes, img) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-price').innerText = price;
+            document.getElementById('modal-notes').innerText = notes;
+            document.getElementById('modal-img').src = img;
+            document.getElementById('modal-order-btn').onclick = function() {
+                orderWhatsApp(title, price);
+            };
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeProductDetail() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        function openCart() {
+            alert("Sepetiniz boş. Ürünler sayfasından sipariş oluşturabilirsiniz.");
+        }
+    </script>
+</body>
+</html>
