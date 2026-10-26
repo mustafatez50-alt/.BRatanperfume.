@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRATAN Perfume | Premium Extrait De Parfum</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#fcfbfa', /* Lüks Kırık Beyaz / Krem Arka Plan */
+                        brandLightBg: '#ffffff', /* Saf Beyaz Kartlar */
+                        brandGold: '#c5a059', /* Premium Soft Altın */
+                        brandGoldDark: '#a37f3d', /* Derin Detay Altın */
+                        brandText: '#1c1b18' /* Koyu Mat Kahve/Siyah Yazı Tonu */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://googleapis.com');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfbfa; color: #1c1b18; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-brandDark min-h-screen flex flex-col select-none pb-20">
+
+    <!-- ÜST HEADER VE LOGO -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/80 shadow-sm">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- YENİ ENTEGRE PNG LOGO ALANI -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
+                <div class="w-12 h-12 flex items-center justify-center p-0.5">
+                    <!-- Paylaştığınız Yeni Siyah Üçgenli PNG Logo Görseli -->
+                    <img src="image_sVRalm.png" class="w-full h-full object-contain" alt="BRATAN Logo">
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h1 class="text-xl font-black tracking-[0.12em] text-brandText leading-none font-sans uppercase">
+                        B<span class="text-red-700 inline-block transform scale-x-[-1] font-black mx-[0.01em]">R</span>ATAN
+                    </h1>
+                    <p class="text-[9px] tracking-[0.22em] text-brandGold font-bold mt-0.5 leading-none uppercase">
+                        TK Quality
+                    </p>
+                </div>
+            </div>
+
+            <!-- SAĞ İKONLAR -->
+            <div class="flex items-center space-x-3 text-stone-600">
+                <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-full bg-stone-100 border border-stone-200 flex items-center justify-center text-pink-600 hover:bg-stone-200 transition">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <button onclick="openCart()" class="relative w-8 h-8 rounded-full bg-stone-100 border border-stone-200 flex items-center justify-center hover:bg-stone-200 transition">
+                    <i class="fa-solid fa-bag-shopping text-sm text-stone-800"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-brandGold text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ÜST KATEGORİ MENÜSÜ (ALTIN & BEYAZ KONSEPT) -->
+        <div class="bg-white border-t border-stone-100 overflow-x-auto hide-scrollbar">
+            <div class="flex space-x-6 px-4 py-2.5 whitespace-nowrap text-xs font-semibold uppercase tracking-wider border-b border-stone-100">
+                <button onclick="switchTab('home')" id="nav-home" class="text-brandGold pb-1 border-b-2 border-brandGold transition">Anasayfa</button>
+                <button onclick="switchTab('erkek')" id="nav-erkek" class="text-stone-400 hover:text-brandText pb-1 transition">Erkek</button>
+                <button onclick="switchTab('kadin')" id="nav-kadin" class="text-stone-400 hover:text-brandText pb-1 transition">Kadın</button>
+                <button onclick="switchTab('ozel')" id="nav-ozel" class="text-stone-400 hover:text-brandText pb-1 transition">Özel Üretim</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ANA İÇERİK ALANI -->
+    <main class="max-w-md mx-auto w-full px-4 py-4 flex-grow">
+
+        <!-- 1. ANASAYFA EKRANI -->
+        <div id="tab-home" class="space-y-4">
+            <div class="bg-gradient-to-r from-stone-50 via-white to-stone-50 border border-stone-200 rounded-2xl p-4 text-center shadow-sm">
+                <span class="bg-brandGold/10 text-brandGoldDark text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-brandGold/20">Extrait De Parfum</span>
+                <h2 class="text-lg font-bold text-brandText mt-2">İmza Kokunuzu Keşfedin</h2>
+                <p class="text-xs text-stone-500 mt-1">%30 lüks yoğun esans oranı ve üstün kalıcılık performansı.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                <div onclick="switchTab('erkek')" class="relative h-44 rounded-xl overflow-hidden shadow-sm border border-stone-200 cursor-pointer group bg-white">
+                    <img src="image_4BGgY4.png" class="w-full h-full object-cover opacity-50 filter grayscale" alt="Erkek Kokuları">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white/95 via-white/20 to-transparent flex flex-col justify-end p-3">
+                        <span class="text-[10px] text-brandGoldDark font-bold uppercase tracking-widest">Maskülen</span>
+                        <h3 class="text-sm font-bold text-brandText">ERKEK</h3>
+                    </div>
+                </div>
+
+                <div onclick="switchTab('kadin')" class="relative h-44 rounded-xl overflow-hidden shadow-sm border border-stone-200 cursor-pointer group bg-white">
+                    <img src="image_HQw8al.png" class="w-full h-full object-cover opacity-75" alt="Kadın Kokuları">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white/95 via-white/20 to-transparent flex flex-col justify-end p-3">
+                        <span class="text-[10px] text-brandGoldDark font-bold uppercase tracking-widest">Zarif Seri</span>
+                        <h3 class="text-sm font-bold text-brandText">KADIN</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. ERKEK PARFÜMLERİ EKRANI (STOK UYARISI) -->
+        <div id="tab-erkek" class="hidden py-12 text-center space-y-4">
+            <div class="w-16 h-16 bg-white border border-stone-200 rounded-full flex items-center justify-center mx-auto text-brandGold shadow-sm animate-pulse">
+                <i class="fa-solid fa-boxes-stacked text-2xl"></i>
+            </div>
+            <h2 class="text-xl font-extrabold text-brandText tracking-wide">Erkek Koleksiyonu</h2>
+            <p class="text-sm text-stone-600 max-w-xs mx-auto bg-white border border-stone-200 px-4 py-3 rounded-xl font-medium tracking-wide shadow-sm">
+                Stoklarımız en kısa sürede yenilencektir.
+            </p>
+        </div>
+
+        <!-- 3. KADIN PARFÜMLERİ EKRANI (800 TL VE GLOBAL LÜKS MARKALARA UYGUN ÖZELLİKLER) -->
+        <div id="tab-kadin" class="hidden space-y-6">
+            <h2 class="text-lg font-bold text-brandText tracking-wider uppercase border-l-2 border-brandGold pl-2">Kadın Parfüm Seçkisi</h2>
+            
+            <div class="space-y-4">
+                <!-- W1 ÜRÜN KARTI (TÜKENDİ ŞEKLİNDE) -->
+                <div class="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm opacity-75 relative">
+                    <!-- Tükendi Filigranı overlay -->
+                    <div class="absolute inset-0 bg-white/40 z-30 pointer-events-none flex items-center justify-center">
+                        <span class="bg-stone-800/90 text-white text-xs font-black tracking-widest uppercase px-4 py-2 rounded-lg rotate-[-12deg] shadow-md border border-stone-700">TÜKENDİ</span>
+                    </div>
+                    <div class="relative h-72 bg-stone-50">
+                        <img src="image_4BGgY4.png" class="w-full h-full object-cover filter blur-[1px]" alt="BRATAN W1">
+                        <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-stone-500 text-xs font-black px-3 py-1 rounded-full border border-stone-200 z-40">W1</span>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div>
+                            <h3 class="text-base font-bold text-stone-400 tracking-wide line-through">BЯATAN W1</h3>
+                            <p class="text-xs text-stone-400 italic mt-0.5">Zarafetin En Güçlü Hali</p>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 py-2 border-y border-stone-100 text-center text-stone-400">
+                            <div class="bg-stone-50 p-1.5 rounded-lg">
+                                <p class="text-[9px] font-bold uppercase tracking-wider">Üst Nota</p>
+                                <p class="text-[10px] mt-0.5">Deniz Notaları</p>
+                            </div>
+                            <div class="bg-stone-50 p-1.5 rounded-lg">
+                                <p class="text-[9px] font-bold uppercase tracking-wider">Kalp Nota</p>
+                                <p class="text-[10px] mt-0.5">Biberiye</p>
+                            </div>
+                            <div class="bg-stone-50 p-1.5 rounded-lg">
+                                <p class="text-[9px] font-bold uppercase tracking-wider">Dip Nota</p>
